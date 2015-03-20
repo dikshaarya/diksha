@@ -32,6 +32,7 @@ var x = parseInt(document.getElementById("a").value);
 var y = parseInt(document.getElementById("b").value);
 var z = document.getElementById("c");
 z.value=(x/y)*100;
+suitability();
 }
 </script>
 </head>
@@ -46,7 +47,6 @@ Expected or Actual yield of crop:<input type="text" id="a" /></br></br>
 Standard yield of crop:<input type="text" id="b" /></br>
 <input type="button" onclick="javascript:myfunction()" value="Calculate PRI" /></br></br>
 Productivity Rating Index(PRI): <input type="text" id="c" /></br>
-<input type="button" onclick="javascript:suitability()" value="Show Suitability Class" /></br></br>
 <div>
 </form>
 <div id="footer">
@@ -56,16 +56,16 @@ function suitability(){
 var z= parseInt(document.getElementById("c").value);
 var myclass;
 if (z<20){
-myclass="N";
+myclass=" Suitability Class:N";
 }
 else if (z<40){
-myclass="S3";
+myclass="Suitability Class:S3";
 }
 else if (z<80){
-myclass="S2";
+myclass="Suitability Class:S2";
 }
 else {
-myclass="S1";
+myclass="Suitability Class:S1";
 }
 document.getElementById("demo").innerHTML=myclass;
 }
